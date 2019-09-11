@@ -1,4 +1,6 @@
-package se.ecutb.oscarjohannson.Products;
+package se.ecutb.oscarjohannson.Models;
+
+import se.ecutb.oscarjohannson.Products.Product;
 
 public class VendingMachineIMPL implements VendingMachine {
 
@@ -8,8 +10,8 @@ public class VendingMachineIMPL implements VendingMachine {
     }
 
     @Override
-    public void reguest(int productNumber) {
-
+    public Product reguest(int productNumber) {
+        return null;
     }
 
     @Override
