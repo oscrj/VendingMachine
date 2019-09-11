@@ -9,7 +9,7 @@ public class VendingMachineIMPL implements VendingMachine {
 
 
     private Product[] products;
-    private int moneyPool = 0;      //Store amount of money you put in machine.
+    private int moneyPool;      //Store amount of money you put in machine.
 
     //constructor that take array Product and set moneyPool to zero.
     public VendingMachineIMPL(Product[] products) {
@@ -25,29 +25,61 @@ public class VendingMachineIMPL implements VendingMachine {
         for(int currency : acceptedCurrency ){
             if(amount == currency){
                 moneyPool += amount;
-            }else{
-                System.out.println("Invalid amount.");
+                break;
             }
         }
     }
+
+    private Product findProduct(int productNumber){
+        for(Product product : products){
+            if(product.getProductNumber() == productNumber){
+                return product;
+            }
+        }
+        return null;
+    }
+
     @Override
     public Product request(int productNumber) {
-        return null;
+
+        Product product = findProduct(productNumber);
+        // check if product cost more than current amount.
+        if(product.getPrice() > moneyPool){
+            return null; // return null
+        }
+        // money gets withdrawn from moneyPool.
+        moneyPool -= product.getPrice();
+        return product;
     }
     @Override
     public int endSession() {
-        return 0;
+        //Give change value of moneyPool.
+        int change = moneyPool;
+        //Set moneyPool to zero.
+        moneyPool = 0;
+        //return change to customer.
+        return change;
+
     }
     @Override
     public String getDescription(int productNumber) {
-        return null;
+
+        Product product = findProduct(productNumber);
+        //if product equals null
+        if(product == null){
+            System.out.println("Cant find product!");
+        }
+        //return product info using examine() method.
+        return product.examine();
     }
+
     @Override
     public int getBalance() {
-        return 0;
+        return moneyPool;
     }
     @Override
     public String[] getProducts() {
+
         return new String[0];
     }
 }
