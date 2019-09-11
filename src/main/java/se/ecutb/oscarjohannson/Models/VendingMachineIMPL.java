@@ -2,9 +2,6 @@ package se.ecutb.oscarjohannson.Models;
 
 import se.ecutb.oscarjohannson.Products.Product;
 
-import java.sql.SQLOutput;
-import java.util.Arrays;
-
 public class VendingMachineIMPL implements VendingMachine {
 
 
