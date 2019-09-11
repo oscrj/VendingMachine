@@ -4,32 +4,44 @@ public abstract class Product {
 
     private int price;
     private String name;
-    private int productName;
+    private int productNumber;
     private int calories;
-    private String allergen;
 
-    public Product(int price, String name, int productName, int calories, String allergen) {
+    public Product(int price, String name, int productNumber, int calories) {
         this.price = price;
         this.name = name;
-        this.productName = productName;
+        this.productNumber = productNumber;
         this.calories = calories;
-        this.allergen = allergen;
+
     }
 
-    //Getters
     public int getPrice() {
         return price;
     }
     public String getName() {
         return name;
     }
-    public int getProductName() {
-        return productName;
+    public int getProductNumber() {
+        return productNumber;
     }
     public int getCalories() {
         return calories;
     }
-    public String getAllergen() {
-        return allergen;
+
+
+
+    public String examine(){
+
+        String info =
+                    "price = " + price +
+                    ", name = " + name + '\'' +
+                    ", productNumber = " + productNumber +
+                    ", calories = " + calories + '}';
+
+        return info;
     }
+
+    public abstract String use();
+
 }
+
