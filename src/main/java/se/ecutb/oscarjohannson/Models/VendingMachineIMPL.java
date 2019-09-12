@@ -16,6 +16,7 @@ public class VendingMachineIMPL implements VendingMachine {
 
     @Override
     public void addCurrency(int amount) {
+        //Accepted currency.
         int[] acceptedCurrency = {1, 5, 10, 20, 50, 100, 500, 1000};
 
         //Check if amount is equal in acceptedCurrency.
@@ -76,7 +77,14 @@ public class VendingMachineIMPL implements VendingMachine {
     }
     @Override
     public String[] getProducts() {
+        //Creating a new string to store products name and productNumber.
+        String[] showProduct = new String[products.length];
 
-        return new String[0];
+        //Search array products and store  every product in new array and whit product name and number.
+        for(int i = 0; i < products.length; i++){
+            showProduct[i] = products[i].showProducts();
+        }
+
+        return showProduct;
     }
 }

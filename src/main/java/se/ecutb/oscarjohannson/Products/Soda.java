@@ -3,8 +3,8 @@ package se.ecutb.oscarjohannson.Products;
 public class Soda extends Product {
 
     //Constructor
-    public Soda(int price, String name, int productName, int calories) {
-        super(price, name, productName, calories);
+    public Soda(int price, String name, int productNumber, int calories) {
+        super(price, name, productNumber, calories);
     }
 
     @Override

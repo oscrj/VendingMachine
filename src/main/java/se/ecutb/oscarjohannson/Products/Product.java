@@ -14,7 +14,7 @@ public abstract class Product {
         this.calories = calories;
 
     }
-
+    //Getter
     public int getPrice() {
         return price;
     }
@@ -28,15 +28,15 @@ public abstract class Product {
         return calories;
     }
 
-
-
     public String examine(){
 
-        String info =
-                    "price = " + price +
-                    ", name = " + name + '\'' +
-                    ", productNumber = " + productNumber +
-                    ", calories = " + calories + '}';
+        String info = "price = " + price + ", name = " + name + '\'' + ", productNumber = " + productNumber + ", calories = " + calories + '}';
+
+        return info;
+    }
+
+    public String showProducts(){
+        String info = "Productnumber: " + productNumber + "Product name: " + name;
 
         return info;
     }

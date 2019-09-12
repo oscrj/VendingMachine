@@ -5,12 +5,12 @@ public class Snacks extends Product {
     private String allegen;
 
     //Constructor
-    public Snacks(int price, String name, int productName, int calories) {
-        super(price, name, productName, calories);
+    public Snacks(int price, String name, int productNumber, int calories) {
+        super(price, name, productNumber, calories);
     }
-
-    public Snacks(int price, String name, int productName, int calories, String allegen) {
-        super(price,name,productName,calories);
+    //Constructor
+    public Snacks(int price, String name, int productNumber, int calories, String allegen) {
+        super(price,name,productNumber,calories);
         this.allegen = allegen;
     }
 
