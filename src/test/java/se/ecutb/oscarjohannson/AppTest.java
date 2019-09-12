@@ -75,15 +75,17 @@ public class AppTest {
         String expected = "price = 15, name = Coca-cola, productNumber = 1, calories = 200";
         String actual = testObject.getDescription(productNumber);
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected,actual);
     }
     @Test
     public void testGetProducts(){
 
-    }
-    @Test
-    public void test(){
+        String[] expected = {"Productnumber: 1Product name: Coca-cola",
+                            "Productnumber: 2Product name: Snickers",
+                            "Productnumber: 3Product name: Apple"};
 
-    }
+        String[] actual = testObject.getProducts();
+        Assert.assertArrayEquals(expected, actual);
+        }
 
 }

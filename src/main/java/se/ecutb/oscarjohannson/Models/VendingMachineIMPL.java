@@ -75,6 +75,7 @@ public class VendingMachineIMPL implements VendingMachine {
     public int getBalance() {
         return moneyPool;
     }
+
     @Override
     public String[] getProducts() {
         //Creating a new string to store products name and productNumber.

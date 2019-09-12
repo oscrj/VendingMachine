@@ -29,14 +29,14 @@ public abstract class Product {
     }
 
     public String examine(){
-
+        //Create a string with products info.
         String info = "price = " + price + ", name = " + name  + ", productNumber = " + productNumber + ", calories = " + calories;
         return info;
     }
 
     public String showProducts(){
+        //Create a string with product number and product name.
         String info = "Productnumber: " + productNumber + "Product name: " + name;
-
         return info;
     }
 
