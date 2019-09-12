@@ -9,9 +9,6 @@ import se.ecutb.oscarjohannson.Products.Product;
 import se.ecutb.oscarjohannson.Products.Snacks;
 import se.ecutb.oscarjohannson.Products.Soda;
 
-
-
-
 public class AppTest {
 
     private VendingMachineIMPL testObject;
@@ -29,7 +26,6 @@ public class AppTest {
         Product[] test = {cocaCola, Snickers, apple};
         //Instancing class VendingMachine and give it Product array test.
         testObject = new VendingMachineIMPL(test);
-
     }
     @Test
     public void testAddMoney(){
@@ -39,7 +35,6 @@ public class AppTest {
         testObject.addCurrency(100);
         //Get balance in vendingMachine.
         int actual = testObject.getBalance();
-
         //Act & Assert.
         Assert.assertEquals(expected ,actual);
     }
@@ -56,7 +51,6 @@ public class AppTest {
         Product actual = testObject.request(productNumber);
         //Assert
         Assert.assertEquals(expected ,actual);
-
     }
     @Test
     public void testEndSession(){
@@ -64,26 +58,25 @@ public class AppTest {
         testObject.addCurrency(100);
         int expected = 100;
         int actual = testObject.endSession();
-
+        //Assert.
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void testGetDescription(){
-
+        //Set prductNumber to value 1.
         int productNumber = 1;
-
+        //Expected string.
         String expected = "price = 15, name = Coca-cola, productNumber = 1, calories = 200";
+        //Actual string.
         String actual = testObject.getDescription(productNumber);
-
+        //Assert.
         Assert.assertEquals(expected,actual);
     }
     @Test
     public void testGetProducts(){
-
         String[] expected = {"Productnumber: 1Product name: Coca-cola",
                             "Productnumber: 2Product name: Snickers",
                             "Productnumber: 3Product name: Apple"};
-
         String[] actual = testObject.getProducts();
         Assert.assertArrayEquals(expected, actual);
         }

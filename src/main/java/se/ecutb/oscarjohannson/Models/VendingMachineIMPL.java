@@ -4,7 +4,6 @@ import se.ecutb.oscarjohannson.Products.Product;
 
 public class VendingMachineIMPL implements VendingMachine {
 
-
     private Product[] products;
     private int moneyPool;      //Store amount of money you put in machine.
 
@@ -13,7 +12,6 @@ public class VendingMachineIMPL implements VendingMachine {
         this.products = products;
         this.moneyPool = 0;
     }
-
     @Override
     public void addCurrency(int amount) {
         //Accepted currency.
@@ -27,7 +25,6 @@ public class VendingMachineIMPL implements VendingMachine {
             }
         }
     }
-
     private Product findProduct(int productNumber){
         for(Product product : products){
             if(product.getProductNumber() == productNumber){
@@ -36,7 +33,6 @@ public class VendingMachineIMPL implements VendingMachine {
         }
         return null;
     }
-
     @Override
     public Product request(int productNumber) {
 
@@ -57,11 +53,9 @@ public class VendingMachineIMPL implements VendingMachine {
         moneyPool = 0;
         //return change to customer.
         return change;
-
     }
     @Override
     public String getDescription(int productNumber) {
-
         Product product = findProduct(productNumber);
         //if product equals null
         if(product == null){
@@ -70,22 +64,18 @@ public class VendingMachineIMPL implements VendingMachine {
         //return product info using examine() method.
         return product.examine();
     }
-
     @Override
     public int getBalance() {
         return moneyPool;
     }
-
     @Override
     public String[] getProducts() {
         //Creating a new string to store products name and productNumber.
         String[] showProduct = new String[products.length];
-
         //Search array products and store  every product in new array and whit product name and number.
         for(int i = 0; i < products.length; i++){
             showProduct[i] = products[i].showProducts();
         }
-
         return showProduct;
     }
 }
