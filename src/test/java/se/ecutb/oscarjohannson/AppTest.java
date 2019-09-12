@@ -3,14 +3,13 @@ package se.ecutb.oscarjohannson;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import se.ecutb.oscarjohannson.Models.VendingMachine;
 import se.ecutb.oscarjohannson.Models.VendingMachineIMPL;
 import se.ecutb.oscarjohannson.Products.Fruits;
 import se.ecutb.oscarjohannson.Products.Product;
 import se.ecutb.oscarjohannson.Products.Snacks;
 import se.ecutb.oscarjohannson.Products.Soda;
 
-import java.util.PriorityQueue;
+
 
 
 public class AppTest {
@@ -23,9 +22,9 @@ public class AppTest {
     @Before
     public void setUp(){
         //Products in vending machine
-        cocaCola = new Soda(15,"Coca-cola",001, 200);
-        Snickers = new Snacks(25, "Snickers", 002, 340);
-        apple = new Fruits(10, "Apple", 003, 100);
+        cocaCola = new Soda(15,"Coca-cola",1, 200);
+        Snickers = new Snacks(25, "Snickers", 2, 340);
+        apple = new Fruits(10, "Apple", 3, 100);
         //Put products in array test.
         Product[] test = {cocaCola, Snickers, apple};
         //Instancing class VendingMachine and give it Product array test.
@@ -50,24 +49,40 @@ public class AppTest {
         //Add money to vendingMachine.
         testObject.addCurrency(100);
         //Give productNumber value 001.
-        int productNumber = 001;
+        int productNumber = 1;
         //Create expected Product and give it value cocaCola.
         Product expected = cocaCola;
         //Create product actual and call method request and give it product number.
         Product actual = testObject.request(productNumber);
+        //Assert
         Assert.assertEquals(expected ,actual);
 
     }
     @Test
     public void testEndSession(){
+        //Add money to Vending machine.
+        testObject.addCurrency(100);
+        int expected = 100;
+        int actual = testObject.endSession();
 
+        Assert.assertEquals(expected, actual);
     }
     @Test
     public void testGetDescription(){
 
+        int productNumber = 1;
+
+        String expected = "price = 15, name = Coca-cola, productNumber = 1, calories = 200";
+        String actual = testObject.getDescription(productNumber);
+
+        Assert.assertEquals(expected, actual);
     }
     @Test
-    public void testGetBalance(){
+    public void testGetProducts(){
+
+    }
+    @Test
+    public void test(){
 
     }
 

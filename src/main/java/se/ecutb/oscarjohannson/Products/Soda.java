@@ -8,11 +8,6 @@ public class Soda extends Product {
     }
 
     @Override
-    public String examine(){
-        return "";
-    }
-
-    @Override
     public  String use(){
         return "Enjoy your Soda";
     }

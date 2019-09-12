@@ -30,8 +30,7 @@ public abstract class Product {
 
     public String examine(){
 
-        String info = "price = " + price + ", name = " + name + '\'' + ", productNumber = " + productNumber + ", calories = " + calories + '}';
-
+        String info = "price = " + price + ", name = " + name  + ", productNumber = " + productNumber + ", calories = " + calories;
         return info;
     }
 
